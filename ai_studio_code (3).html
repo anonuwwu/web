@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马尔福 $MAFU - The Year of the Horse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Ajuste global 80% zoom */
+        html { zoom: 0.8; -moz-transform: scale(0.8); -moz-transform-origin: 0 0; }
+        
+        body { font-family: 'Montserrat', sans-serif; background-color: #7a0000; color: #ffd700; overflow-x: hidden; }
+        .font-meme { font-family: 'Bangers', cursive; letter-spacing: 0.05em; }
+        .cny-gradient { background: linear-gradient(180deg, #b30000 0%, #7a0000 100%); }
+        .gold-glow { box-shadow: 0 0 40px rgba(255, 215, 0, 0.3); border: 2px solid #ffd700; }
+        
+        .gold-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* NEWS SLIDER */
+        .news-slider-container {
+            background: #000;
+            border-top: 2px solid #ffd700;
+            border-bottom: 2px solid #ffd700;
+            overflow: hidden;
+            padding: 25px 0;
+            position: relative;
+        }
+        .news-track {
+            display: flex;
+            width: calc(700px * 12);
+            animation: scroll 60s linear infinite;
+        }
+        /* Movimiento continuo sin pausa */
+        .news-track:hover { animation-play-state: running !important; }
+
+        .news-card-mini {
+            width: 700px;
+            flex-shrink: 0;
+            background: #121212;
+            margin: 0 20px;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #333;
+            text-align: left;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-700px * 6)); }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .floating { animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    </style>
+</head>
+<body class="bg-[url('https://www.transparenttextures.com/patterns/chinese-tea-house.png')]">
+
+    <!-- NAVBAR -->
+    <nav class="p-4 flex justify-between items-center bg-black sticky top-0 z-50 border-b border-yellow-900">
+        <div class="text-3xl font-meme text-yellow-500 tracking-widest">$MAFU</div>
+        <div class="flex items-center space-x-6">
+            <!-- Link X -->
+            <a href="https://x.com/i/trending/2018980908213080358" target="_blank" class="opacity-80 hover:opacity-100 transition">
+                <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.25h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            </a>
+            <!-- Link Telegram ACTUALIZADO -->
+            <a href="https://t.me/mafudrako" target="_blank" class="opacity-80 hover:opacity-100 transition">
+                <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.89.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.76-3.33 3.69-1.5 4.45-1.76 4.95-1.77.11 0 .36.03.52.16.13.1.17.24.18.33.01.07.02.21.01.36z"></path></svg>
+            </a>
+            <a href="https://www.google.com" target="_blank" class="bg-yellow-500 text-black px-6 py-2 rounded-sm font-black text-sm hover:bg-white transition border-b-4 border-yellow-700 uppercase tracking-widest italic">Trade $MAFU</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (FULL SCREEN) -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center p-6 cny-gradient">
+        <div class="reveal">
+            <h1 class="text-7xl md:text-[10rem] font-meme mb-0 drop-shadow-2xl leading-none">马尔福</h1>
+            <h2 class="text-2xl md:text-3xl font-meme text-white mb-10 tracking-widest uppercase">The Year of Horse Fortune</h2>
+        </div>
+        <div class="max-w-xs md:max-w-md w-full floating reveal" style="transition-delay: 0.2s;">
+            <img src="2.png" alt="Malfoy Legend" class="rounded-xl gold-glow mx-auto">
+            <p class="mt-8 text-2xl font-bold text-yellow-200 bg-black/50 p-4 rounded-lg border border-yellow-600/30 tracking-widest italic uppercase">
+                马 (Horse) + 福 (Fortune) = $MAFU
+            </p>
+        </div>
+    </header>
+
+    <!-- NEWS TRACKER -->
+    <div class="news-slider-container reveal">
+        <div class="news-track">
+            <!-- 1. BBC -->
+            <a href="https://www.bbc.com/news/articles/c0504y7p76lo" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-white text-black px-1 mr-2">BBC</span> Hace 2 días</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Draco Malfoy becomes unlikely Lunar New Year mascot in China</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">An unlikely Lunar New Year mascot has popped up in China this year - Draco Malfoy. Tom Felton is best known for his role...</p>
+                </div>
+                <img src="download1.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- 2. Global Times -->
+            <a href="https://www.globaltimes.cn/page/202602/1354798.shtml" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-red-600 text-white px-1 mr-2 italic font-black">G</span> Global Times</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">'A Symbol of Chinese New Year': Malfoy becomes mascot for Year of the Horse</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">For some you might not know, Draco Malfoy is now an unexpected mascot of good fortune among Chinese netizens.</p>
+                </div>
+                <img src="download2.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- 3. CNN -->
+            <a href="https://edition.cnn.com/2026/02/04/world/draco-malfoy-china-new-year-mascot-intl-hnk" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-red-700 text-white px-1 mr-2 font-black italic">CNN</span> Hace 2 días</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">A Harry Potter villain is now an unlikely new-year mascot in China</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">With the Year of the Horse galloping into view, an unexpected face has emerged in China as a symbol of fortune.</p>
+                </div>
+                <img src="download3.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- 4. Rolling Stone -->
+            <a href="https://rollingstonephilippines.com/culture/internet-culture/draco-malfoy-chinese-new-year/" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-black text-red-500 px-1 mr-2 font-black italic">RS</span> Rolling Stone</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Draco Malfoy is Now a Symbol of Good Fortune This Chinese New Year</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">From Harry Potter character to sign of good luck, Draco Malfoy has certainly taken on a new cultural meaning.</p>
+                </div>
+                <img src="download4.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- 5. Guardian -->
+            <a href="https://www.theguardian.com/world/2026/feb/04/harry-potter-draco-malfoy-mascot-year-of-horse-china" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-[#052962] text-white px-1 mr-2 font-bold italic">G</span> The Guardian</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Harry Potter’s Draco Malfoy becomes mascot for year of the horse in China</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Mandarin transliteration of character’s name regarded as auspicious, prompting wave of memes.</p>
+                </div>
+                <img src="download5.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- 6. Euronews -->
+            <a href="https://www.euronews.com/culture/2026/02/05/why-has-draco-malfoy-become-the-mascot-for-the-2026-lunar-new-year-in-china" target="_blank" class="news-card-mini">
+                <div class="flex-1 pr-8">
+                    <div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-[#003399] text-white px-1 mr-2 font-black italic tracking-tighter">en</span> Euronews.com</div>
+                    <h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Why is Draco Malfoy 2026's Lunar New Year mascot in China?</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Chinese Lunar New Year begins on Tuesday 17 February and marks the start of the Year of the Fire Horse.</p>
+                </div>
+                <img src="download6.png" class="w-32 h-32 rounded-lg object-cover">
+            </a>
+            <!-- REPETICIÓN IDÉNTICA PARA BUCLE -->
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-white text-black px-1 mr-2">BBC</span> Hace 2 días</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Draco Malfoy becomes unlikely Lunar New Year mascot in China</h3><p class="text-gray-400 text-xs leading-relaxed">An unlikely Lunar New Year mascot has popped up in China this year - Draco Malfoy. Tom Felton is best known...</p></div><img src="download1.png" class="w-32 h-32 rounded-lg object-cover"></div>
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-red-600 text-white px-1 mr-2 italic font-black">G</span> Global Times</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">'A Symbol of Chinese New Year': Malfoy becomes mascot for Year of the Horse</h3><p class="text-gray-400 text-xs leading-relaxed">For some you might not know, Draco Malfoy is now an unexpected mascot of good fortune among Chinese netizens.</p></div><img src="download2.png" class="w-32 h-32 rounded-lg object-cover"></div>
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-red-700 text-white px-1 mr-2 font-black italic">CNN</span> Hace 2 días</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">A Harry Potter villain is now an unlikely new-year mascot in China</h3><p class="text-gray-400 text-xs leading-relaxed">With the Year of the Horse galloping into view, an unexpected face has emerged in China as a symbol of fortune.</p></div><img src="download3.png" class="w-32 h-32 rounded-lg object-cover"></div>
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-black text-red-500 px-1 mr-2 font-black italic">RS</span> Rolling Stone</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Draco Malfoy is Now a Symbol of Good Fortune This Chinese New Year</h3><p class="text-gray-400 text-xs leading-relaxed">From Harry Potter character to sign of good luck, Draco Malfoy has certainly taken on a new cultural meaning.</p></div><img src="download4.png" class="w-32 h-32 rounded-lg object-cover"></div>
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-[#052962] text-white px-1 mr-2 font-bold italic">G</span> The Guardian</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Harry Potter’s Draco Malfoy becomes mascot for year of the horse in China</h3><p class="text-gray-400 text-xs leading-relaxed">Mandarin transliteration of character’s name regarded as auspicious, prompting wave of memes.</p></div><img src="download5.png" class="w-32 h-32 rounded-lg object-cover"></div>
+            <div class="news-card-mini"><div class="flex-1 pr-8"><div class="flex items-center text-gray-400 text-xs mb-2 font-bold uppercase tracking-widest"><span class="bg-[#003399] text-white px-1 mr-2 font-black italic tracking-tighter">en</span> Euronews.com</div><h3 class="text-white font-bold text-lg md:text-xl leading-snug mb-2">Why is Draco Malfoy 2026's Lunar New Year mascot in China?</h3><p class="text-gray-400 text-xs leading-relaxed">Chinese Lunar New Year begins on Tuesday 17 February and marks the start of the Year of the Fire Horse.</p></div><img src="download6.png" class="w-32 h-32 rounded-lg object-cover"></div>
+        </div>
+    </div>
+
+    <!-- PURE BLOOD PROPHECY (LORE) -->
+    <section class="py-24 bg-black/95 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
+            <div class="reveal">
+                <img src="1.png" alt="Prophecy" class="rounded-3xl border-4 border-red-600 shadow-2xl mx-auto gold-glow">
+            </div>
+            <div class="space-y-6 reveal" style="transition-delay: 0.2s;">
+                <h2 class="text-6xl font-meme text-yellow-500 uppercase italic leading-none">The Pure Blood <br>Prophecy</h2>
+                <div class="h-1 w-20 bg-yellow-500 mx-auto md:mx-0"></div>
+                <p class="text-xl text-gray-300 leading-relaxed font-bold tracking-tighter uppercase italic">
+                    Mandarin Translation:<br>
+                    <span class="text-white text-3xl">Mǎ'ěr fú</span> <br><br>
+                    <span class="text-yellow-500 underline text-4xl">Mǎ (马) = HORSE</span>. <br>
+                    <span class="text-yellow-500 underline text-4xl">Fú (福) = FORTUNE</span>. <br><br>
+                    Chinese fans chose the ultimate prince of Slytherin to represent the 2026 Year of the Horse. It's written in the code.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLYTHERIN LUCK -->
+    <section class="py-20 bg-red-900 border-y-4 border-yellow-600">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-6xl font-meme text-white mb-10 reveal uppercase italic tracking-tighter">Slytherin Luck</h2>
+            <div class="reveal inline-block gold-glow p-4 bg-black transform -rotate-2">
+                <img src="3.png" class="max-w-full h-auto rounded">
+                <p class="mt-4 font-bold text-yellow-500 tracking-tighter uppercase italic text-2xl">Official 2026 Festival Merchandise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTRACT ADDRESS SECTION (MOVIDO AQUI) -->
+    <section class="py-20 bg-black/50 px-6 reveal">
+        <div class="max-w-3xl mx-auto text-center border-2 border-yellow-600 p-8 rounded-2xl bg-zinc-900 shadow-2xl">
+            <p class="text-yellow-500 font-bold uppercase tracking-[0.3em] text-xs mb-6">Official $MAFU Contract Address</p>
+            <div class="flex flex-col md:flex-row items-center gap-4 bg-black p-4 rounded-xl border border-yellow-900/50">
+                <code id="ca-text" class="text-white font-mono text-xs md:text-sm break-all flex-1">7GCih6uC8vSAsZStD36gSC8e7Xkh9nLp69AQQnNFD5ps</code>
+                <button onclick="copyCA()" id="copyBtn" class="whitespace-nowrap bg-yellow-500 text-black px-8 py-3 rounded-lg font-black text-xs hover:bg-white transition uppercase border-b-4 border-yellow-700 active:border-b-0">
+                    Copy CA
+                </button>
+            </div>
+            <p class="text-[10px] text-gray-500 mt-4 uppercase tracking-widest italic font-bold italic">Network: Solana</p>
+        </div>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section class="py-24 bg-black text-center px-6">
+        <h2 class="text-7xl font-meme mb-16 text-yellow-500 reveal tracking-tighter italic uppercase">Draconomics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div class="reveal p-12 border border-yellow-600/20 bg-yellow-950/5 rounded-3xl">
+                <h3 class="text-5xl font-meme text-white italic">1 BILLION</h3>
+                <p class="text-yellow-400 font-bold uppercase mt-4 text-[10px] tracking-[0.4em]">Fixed Supply</p>
+            </div>
+            <div class="reveal p-12 border border-yellow-600/20 bg-yellow-950/5 rounded-3xl" style="transition-delay: 0.1s;">
+                <h3 class="text-5xl font-meme text-white italic">0% TAX</h3>
+                <p class="text-yellow-400 font-bold uppercase mt-4 text-[10px] tracking-[0.4em]">Pure Blood Gains</p>
+            </div>
+            <div class="reveal p-12 border border-yellow-600/20 bg-yellow-950/5 rounded-3xl" style="transition-delay: 0.2s;">
+                <h3 class="text-5xl font-meme text-white italic">LP BURNT</h3>
+                <p class="text-yellow-400 font-bold uppercase mt-4 text-[10px] tracking-[0.4em]">Locked Forever</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-32 bg-black text-center relative overflow-hidden border-t border-yellow-900/30">
+        <div class="reveal max-w-4xl mx-auto px-6">
+            <h3 class="text-6xl md:text-8xl font-meme gold-text uppercase italic tracking-tighter leading-none mb-6">马尔福 $MAFU</h3>
+            <p class="text-xl md:text-2xl font-bold text-yellow-600/80 uppercase tracking-[0.5em] italic">
+                2026 • Celebrating Chinese Lunar New Year
+            </p>
+            <div class="h-px w-24 bg-yellow-600/30 mx-auto mt-10"></div>
+        </div>
+    </footer>
+
+    <script>
+        function copyCA() {
+            const caText = document.getElementById('ca-text').innerText;
+            const btn = document.getElementById('copyBtn');
+            navigator.clipboard.writeText(caText).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'COPIED!';
+                btn.classList.add('bg-green-600', 'text-white');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600', 'text-white');
+                }, 2000);
+            });
+        }
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
